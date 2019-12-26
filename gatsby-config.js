@@ -7,6 +7,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://dev-abhisek.pantheonsite.io/`,
+        apiBase: `jsonapi`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

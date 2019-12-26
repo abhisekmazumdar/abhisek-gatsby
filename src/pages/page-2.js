@@ -4,13 +4,22 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const SecondPage = () => (
+const SecondPage = ({ data }) => (
   <Layout>
     <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
+    <pre>{JSON.stringify(data, null, 4)}</pre>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
+
+export const query = graphql`
+  {
+    allNodePage {
+      nodes {
+        title
+      }
+    }
+  }
+`
 
 export default SecondPage
