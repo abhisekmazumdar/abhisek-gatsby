@@ -1,36 +1,13 @@
 import React from "react"
+import "../sass/footer.sass"
 
 const Footer = () => (
-  <footer
-    style={{
-      background: `black`,
-      marginTop: `1.45rem`,
-      textAlign: `center`
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-    <div
-        style={{
-        color: `white`,
-        margin: 0,
-        }}
-    >
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a
-        href="https://www.gatsbyjs.org"
-        style={{
-            textDecoration: `none`,
-        }}
-        >
-            Gatsby</a>
-    </div>
+  <footer>
+    <div className='wapper'>
+      <div className='content'>
+          © Abhisek Mazumdar,
+          <span className='footerYear'>{new Date().getFullYear()}</span>
+      </div>
     </div>
   </footer>
 )
