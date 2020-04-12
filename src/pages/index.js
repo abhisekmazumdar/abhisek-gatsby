@@ -1,22 +1,53 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import CurriculumVitar from "../components/CurriculumVitae"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    <Link to="/my-cv/">My CV</Link>
+    { data.allNodeCurriculumVitae.nodes.map(function(item){
+      return <CurriculumVitar key={ item.id } cv={ item } />
+    }) }
   </Layout>
 )
+
+export const query = graphql`
+  {
+    allNodeCurriculumVitae {
+      nodes {
+        body {
+          value
+        }
+        id
+        field_current_designation
+        relationships {
+          field_display_picture {
+            relationships {
+              thumbnail {
+                localFile {
+                  publicURL
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+          field_academics {
+            id
+            field_name
+            field_college_school
+            field_years
+          }
+        }
+        title
+      }
+    }
+  }
+`
 
 export default IndexPage

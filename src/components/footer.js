@@ -3,7 +3,7 @@ import "../sass/footer.sass"
 
 const Footer = () => (
   <footer>
-    <div className='wapper'>
+    <div className='wrapper'>
       <div className='content'>
           © Abhisek Mazumdar,
           <span className='footerYear'>{new Date().getFullYear()}</span>

@@ -12,8 +12,8 @@ const Header = ({ siteTitle }) => (
         </Link>
       </span>
       <span className='right'>
-        <Link to="#">Link 1</Link>
-        <Link to="#">Link 2</Link>
+        <Link to="/blogs/">Blogs</Link>
+        <Link to="/contact-me/">Get in Touch</Link>
       </span>
     </div>
   </header>
