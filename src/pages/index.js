@@ -7,12 +7,11 @@ import CurriculumVitar from "../components/CurriculumVitae"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    { data.allNodeCurriculumVitae.nodes.map(function(item){
-      return <CurriculumVitar key={ item.id } cv={ item } />
+    { data.allNodeCurriculumVitae.nodes.map((item, index) => {
+      return <CurriculumVitar key={ index } cv={ item } />
     }) }
   </Layout>
 )
-
 export const query = graphql`
   {
     allNodeCurriculumVitae {

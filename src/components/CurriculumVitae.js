@@ -17,8 +17,8 @@ const CurriculumVitar = ( data ) => (
       <div className='academics'>
         <span className='lable'>Academics:</span>
         <span className='section-content'>
-          { data.cv.relationships.field_academics.map(function(item){
-            return <div key={item.id}>{ item.field_name } @ { item.field_college_school }</div>
+          { data.cv.relationships.field_academics.map((academic, index) => {
+            return <div key={index}>{ academic.field_name } @ { academic.field_college_school }</div>
           }) }
         </span>
       </div>
