@@ -1,14 +1,21 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 import "../sass/listblogs.sass"
 
-const ListBlogs = ( article ) => (
+const ListBlogs = ( data ) => (
   <div className='list-blogs-wrapper'>
-    { console.log("article", article)}
-       <div className='content'>
-      {/* <Img fluid={ data.article.relationships.field_image.localFile.childImageSharp.fluid } /> */}
-      <Link to={ article.article.path.alias } >{ article.article.title }</Link>
-      {/* <div className='section-content' dangerouslySetInnerHTML={{ __html: article.article.body.summary }}></div> */}
+    <Link to={ "/blog" + data.article.path.alias } >{ data.article.title }</Link>
+    <div className='content'>
+      <div className='section-content'>
+        <p>{ data.article.body.summary }</p>
+      </div>
+      {(data.article.relationships && data.article.relationships.field_image.localFile.childImageSharp)
+        ?
+          <Img fixed={ data.article.relationships.field_image.localFile.childImageSharp.fixed } />
+        :
+          <div></div>
+      }
     </div>
   </div>
 )
