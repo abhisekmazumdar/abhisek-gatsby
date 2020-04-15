@@ -1,12 +1,18 @@
+@import "variables";
+
 footer
-  background-color: black
-  margin-top: 1.45rem
+  background-color: $primary
   text-align: center
-  padding: 1rem
+  padding: 0.5rem
   .wrapper
-    margin: 0 auto
-    max-width: 960px
     .content
-      color: white
-      .footerYear
-          padding-left: 5px
+      color: $secondary
+      font-size: 1.25rem
+      .menu
+        a
+          color: white
+          text-decoration: none
+          padding: 0 0.5rem 0 0.5rem
+          border-left: 1px solid $secondary
+          &:first-child
+            border-left: none
