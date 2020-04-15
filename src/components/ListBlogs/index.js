@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import "../sass/listblogs.sass"
+import "../../sass/_listblogs.sass"
 
 const ListBlogs = ( data ) => (
   <div className='list-blogs-wrapper'>

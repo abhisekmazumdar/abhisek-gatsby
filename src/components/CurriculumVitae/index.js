@@ -1,6 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-import "../sass/curriculumvitar.sass"
+import "../../sass/_curriculumvitar.sass"
 
 const CurriculumVitar = ( data ) => (
   <div className='curriculumvitar-wrapper'>
