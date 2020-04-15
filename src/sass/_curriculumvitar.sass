@@ -1,19 +1,17 @@
+@import "variables";
+
 .curriculumvitar-wrapper
-  margin: 1rem
   .content
-    .lable
-      font-weight: bolder
-      text-decoration: underline
-      font-size: 20px
     .about-me
-      margin: 1rem 0 1rem 0
-      display: flex
+      @media (min-width: $big-screen)
+        margin: 1rem 0 1rem 0
+        display: flex
       .display-pic
-        width: 20%
-        margin: 0 2rem 0 2rem
-    .section-content
-      font-size: 1.5rem
-    .academics
-      margin: 1rem 0 1rem 0
-      font-size: 25px
-    .current-designation
+        text-align: center
+        @media (min-width: $big-screen)
+          text-align: unset
+      .bio
+        margin-top: 1rem
+        @media (min-width: $big-screen)
+          margin-left: 1rem
+          margin-top: 0

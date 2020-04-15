@@ -17,14 +17,13 @@ const IndexPage = ({ data }) => (
     }
     </div>
     <div className='recent-blogs-block'>
-      <span className='lable'>Recent Blog Post</span>
+      <span className='lable'>#Blogs</span>
       {
         data.allNodeArticle.nodes.map((article, index) => {
           return <ListBlogs key={ index } article={ article } />
         })
       }
     </div>
-
   </Layout>
 )
 export const query = graphql`
@@ -39,12 +38,11 @@ export const query = graphql`
         relationships {
           field_display_picture {
             relationships {
-              thumbnail {
+              field_media_image {
                 localFile {
-                  publicURL
                   childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
+                    fixed(width: 200, height: 200) {
+                      ...GatsbyImageSharpFixed
                     }
                   }
                 }
@@ -61,15 +59,9 @@ export const query = graphql`
         title
       }
     }
-    allNodeArticle(limit: 5, sort: {fields: [title, changed], order: [DESC, ASC]}) {
+    allNodeArticle(limit: 10, sort: {fields: [title, changed], order: [DESC, ASC]}) {
       nodes {
-        body {
-          summary
-        }
         relationships {
-          field_tags {
-            name
-          }
           field_image {
             localFile {
               childImageSharp {
