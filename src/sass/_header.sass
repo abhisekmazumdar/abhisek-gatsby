@@ -1,0 +1,28 @@
+@import "variables";
+
+header
+  background-color: $primary
+  z-index: 999
+  margin-bottom: 1.2em
+  @media (min-width: $big-screen)
+    position: fixed
+    top: 0
+    width: 100%
+  .content
+    padding: 0.5rem 2rem 0.5rem 2rem
+    a
+      text-decoration: none
+      color: $secondary
+    @media (min-width: $big-screen)
+      padding: 0.1rem 10rem 0.1rem 10rem
+    .title a
+      font-size: 2rem
+    .menu
+      padding: 0.5rem 0 0.5rem 0;
+      a
+        padding: 0 0.5rem 0 0.5rem
+        &:first-child
+          padding: 0 0.5rem 0 0
+        @media (min-width: $big-screen)
+          padding: 0 1rem 0 1rem
+

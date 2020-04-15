@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Abhisek Mazumdar`,
-    description: `Just a simple site with gatsby as front end and drupal 8 backend.`,
-    author: `@justAbhisek`,
+    description: `Personal Blog | Tech News | Fun Facts | About Me`,
+    author: `@abhisekmajumdar`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/my-pic.png`,
+        icon: `src/images/icon.png`,
       },
     },
   ],
