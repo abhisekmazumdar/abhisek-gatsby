@@ -13,9 +13,9 @@ const Header = ({ siteTitle }) => (
       </div>
       <nav className='menu'>
         {/* Don't add more then 4 Links */}
-        <Link to="/">About Me</Link>
         <Link to="/blogs/">Blogs</Link>
         <Link to="/">Gallery</Link>
+        <Link to="/twitter/">Tweets</Link>
         <Link to="/contact-me/">Get in Touch</Link>
       </nav>
     </div>
