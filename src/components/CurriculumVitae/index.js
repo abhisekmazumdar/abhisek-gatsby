@@ -16,7 +16,7 @@ const CurriculumVitar = ( data ) => (
       </div>
       <div className='current-designation'>
         <span className='lable'>Work@</span>
-        <p className='section-content'>Currently, I'm working as a <b>{ data.cv.field_current_designation }</b></p>
+        <p className='section-content'>Currently, I'm working as a <b>{ data.cv.field_current_designation }</b>.</p>
       </div>
       <div className='academics'>
         <span className='lable'>Studied@</span>

@@ -1,0 +1,19 @@
+@import "variables"
+
+.blog-wrapper
+  .metadata
+    @media (min-width: $big-screen)
+      display: flex
+      justify-content: space-between
+    .created
+      padding: 0.5rem 0
+  .tags
+    span
+      padding: 0.5rem
+      &:first-child
+        padding-left: 0
+      &:before
+        content: "#"
+  .blog-image
+    img
+      padding: 1rem 0

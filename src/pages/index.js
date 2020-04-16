@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => (
 )
 export const query = graphql`
   {
-    allNodeCurriculumVitae {
+    allNodeCurriculumVitae(filter: {status: {eq: true}}) {
       nodes {
         body {
           value
@@ -57,9 +57,10 @@ export const query = graphql`
           }
         }
         title
+        status
       }
     }
-    allNodeArticle(limit: 10, sort: {fields: [title, changed], order: [DESC, ASC]}) {
+    allNodeArticle(limit: 10, sort: {fields: created, order: DESC}, filter: {status: {eq: true}}) {
       nodes {
         relationships {
           field_image {
@@ -72,11 +73,12 @@ export const query = graphql`
             }
           }
         }
-        changed
+        created
         path {
           alias
         }
         title
+        status
       }
     }
   }

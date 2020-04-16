@@ -15,9 +15,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Query for markdown nodes to use in creating pages.
   const result = await graphql(`
     {
-      allNodeArticle {
+      allNodeArticle(filter: {status: {eq: true}}) {
         nodes {
           title
+          status
           path {
             alias
           }
