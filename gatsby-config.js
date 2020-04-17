@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Abhisek Mazumdar`,
@@ -12,6 +16,10 @@ module.exports = {
       options: {
         baseUrl: `http://dev-abhisek.pantheonsite.io/`,
         apiBase: `jsonapi`,
+        basicAuth: {
+          username: process.env.BASIC_AUTH_USERNAME,
+          password: process.env.BASIC_AUTH_PASSWORD,
+        },
       },
     },
     {
