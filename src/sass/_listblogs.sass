@@ -1,6 +1,6 @@
-@import "variables";
+@import "variables"
 
-.list-blogs-wrapper
+.blogs-wrapper
   border-radius: 5px
   border: 1px solid $secondary
   padding: 5px
@@ -12,3 +12,6 @@
     color: $secondary
   span.blogs-date
     float: right
+    display: none
+    @media (min-width: $big-screen)
+      display: unset

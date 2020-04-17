@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -21,7 +22,7 @@ const Blogs = ({ data }) => (
 
   export const query = graphql`
   {
-    allNodeArticle(sort: {fields: created, order: DESC}) {
+    allNodeArticle(sort: {fields: created, order: DESC}, filter: {status: {eq: true}}) {
       nodes {
         title
         created
