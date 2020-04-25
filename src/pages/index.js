@@ -1,14 +1,29 @@
 import React from "react"
 
 import { graphql } from 'gatsby'
+import useDarkMode from "use-dark-mode"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CurriculumVitar from "../components/CurriculumVitae"
 import ListBlogs from "../components/ListBlogs"
+import Toggle from '../components/Toggle';
 
-const IndexPage = ({ data }) => (
-  <Layout>
+const IndexPage = ({ data }) => {
+
+  const darkMode = useDarkMode(false);
+
+  return (
+    <Layout>
     <SEO title="Home" />
+    <div className="dark-mode-toggle">
+      <button type="button" onClick={darkMode.disable}>
+        ☀
+      </button>
+      <Toggle checked={darkMode.value} onChange={darkMode.toggle} />
+      <button type="button" onClick={darkMode.enable}>
+        ☾
+      </button>
+    </div>
     <div className='curriculumvitae-block'>
     {
       data.allNodeCurriculumVitae.nodes.map((data, index) => {
@@ -25,7 +40,8 @@ const IndexPage = ({ data }) => (
       }
     </div>
   </Layout>
-)
+  )
+}
 export const query = graphql`
   {
     allNodeCurriculumVitae(filter: {status: {eq: true}}) {

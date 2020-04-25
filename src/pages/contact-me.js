@@ -9,5 +9,5 @@ const ContactMe = () => (
     </Layout>
   )
 
-  export default ContactMe
+export default ContactMe
 

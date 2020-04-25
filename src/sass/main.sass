@@ -1,8 +1,7 @@
 @import "variables"
+@import "toggle"
 
 html
-  background-color: $secondary
-  color: $primary
   font-family: sans-serif-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
@@ -23,3 +22,9 @@ body
     margin-bottom: 1rem
   .recent-blogs-block
     margin-bottom: 1rem
+.dark-mode
+  background-color: $primary
+  color: $secondary
+.light-mode
+  background-color: $secondary
+  color: $primary
