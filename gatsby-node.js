@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Query for markdown nodes to use in creating pages.
   const result = await graphql(`
     {
-      allNodeArticle(filter: {status: {eq: true}}) {
+      allNodeArticle(filter: { status: { eq: true } }) {
         nodes {
           title
           status
@@ -25,8 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
     }
-  `
-  )
+  `)
 
   // Handle errors
   if (result.errors) {
@@ -35,7 +34,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   // Create pages for each markdown file.
   const blogPostTemplate = path.resolve(`src/templates/blog-page.js`)
-  result.data.allNodeArticle.nodes.forEach((node) => {
+  result.data.allNodeArticle.nodes.forEach(node => {
     const path = "/blog" + node.path.alias
     createPage({
       path,

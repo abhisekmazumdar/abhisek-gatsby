@@ -5,13 +5,11 @@ import "../../sass/_header.sass"
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div className='content'>
-      <div className='title'>
-        <Link to="/">
-          {siteTitle}
-        </Link>
+    <div className="content">
+      <div className="title">
+        <Link to="/">{siteTitle}</Link>
       </div>
-      <nav className='menu'>
+      <nav className="menu">
         {/* Don't add more then 4 Links */}
         <Link to="/blogs/">Blogs</Link>
         <Link to="/photos/">Photos</Link>

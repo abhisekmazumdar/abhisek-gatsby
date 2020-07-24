@@ -6,6 +6,8 @@ module.exports = {
   siteMetadata: {
     title: `Abhisek Mazumdar`,
     description: `Personal Blog | Tech News | Fun Facts | About Me`,
+    url: "https://www.abhisek.xyz/",
+    image: "/images/icon.png",
     author: `@abhisekmajumdar`,
   },
   plugins: [
@@ -46,10 +48,10 @@ module.exports = {
     {
       resolve: "gatsby-plugin-use-dark-mode",
       options: {
-         classNameDark: "dark-mode",
-         classNameLight: "light-mode",
-         storageKey: "darkMode",
-         minify: true,
+        classNameDark: "dark-mode",
+        classNameLight: "light-mode",
+        storageKey: "darkMode",
+        minify: true,
       },
     },
   ],

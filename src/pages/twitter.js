@@ -4,10 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Twitter = () => (
-    <Layout>
-      <SEO title="Tweets"/>
-    </Layout>
-  )
+  <Layout>
+    <SEO title="Tweets" />
+  </Layout>
+)
 
-  export default Twitter
-
+export default Twitter
