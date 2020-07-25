@@ -9,7 +9,7 @@ import "../sass/_blogs.sass"
 
 const Blogs = ({ data }) => (
   <Layout>
-    <SEO title="Archived Blogs" />
+    <SEO title="Blogs" />
     <div className="blog-listing-wrapper">
       {data.allNodeArticle.nodes.map((article, index) => {
         return <ListBlogs key={index} article={article} />

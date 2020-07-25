@@ -7,9 +7,19 @@ import SEO from "../components/seo"
 import "../sass/_blogpage.sass"
 
 export default ({ data }) => {
+  const image =
+    data.allNodeArticle.nodes[0].relationships.field_image.localFile
+      .childImageSharp.fluid
+  const url = typeof window !== "undefined" ? window.location.href : ""
+
   return (
     <Layout>
-      <SEO title={data.allNodeArticle.nodes[0].title} />
+      <SEO
+        title={data.allNodeArticle.nodes[0].title}
+        description={data.allNodeArticle.nodes[0].body.summary}
+        image={image}
+        canonical={url}
+      />
       <div className="blog-wrapper">
         <div className="metadata">
           <div className="lable">{data.allNodeArticle.nodes[0].title}</div>
@@ -58,6 +68,7 @@ export const query = graphql`
       nodes {
         body {
           processed
+          summary
         }
         created
         relationships {
