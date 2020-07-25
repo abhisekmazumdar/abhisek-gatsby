@@ -5,10 +5,12 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Abhisek Mazumdar`,
-    description: `Personal Blog | Tech News | Fun Facts | About Me`,
-    url: "https://www.abhisek.xyz/",
-    image: "/images/icon.png",
+    description: `Know about Me | Blogs | Tech News | Fun Facts`,
+    url: "https://www.abhisek.xyz",
+    image: "/icons/icon-512x512.png",
+    keywords: ["blogs", "news", "cv", "technology", "drupal", "javascript"],
     author: `@abhisekmajumdar`,
+    twitterUsername: "@abhisekmajumdar",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
