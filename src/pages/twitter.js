@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 const Twitter = () => (
   <Layout>
     <SEO title="Tweets" />
+    <div>Work in Progress</div>
   </Layout>
 )
 
