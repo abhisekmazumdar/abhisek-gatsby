@@ -36,6 +36,12 @@ export default ({ data }) => {
             }
           )}
         </div>
+        <div
+          className="blog-body"
+          dangerouslySetInnerHTML={{
+            __html: data.allNodeArticle.nodes[0].body.processed,
+          }}
+        ></div>
         <div className="blog-image">
           {data.allNodeArticle.nodes[0].relationships.field_image.localFile
             .childImageSharp ? (
@@ -49,12 +55,6 @@ export default ({ data }) => {
             ""
           )}
         </div>
-        <div
-          className="blog-body"
-          dangerouslySetInnerHTML={{
-            __html: data.allNodeArticle.nodes[0].body.processed,
-          }}
-        ></div>
       </div>
     </Layout>
   )
