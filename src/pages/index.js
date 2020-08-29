@@ -45,7 +45,6 @@ export const query = graphql`
           value
         }
         id
-        field_current_designation
         relationships {
           field_display_picture {
             relationships {
@@ -60,11 +59,13 @@ export const query = graphql`
               }
             }
           }
-          field_academics {
+          field_all_in_one {
             id
-            field_name
-            field_college_school
-            field_years
+            field_title
+            field_body {
+              processed
+            }
+            status
           }
         }
         title

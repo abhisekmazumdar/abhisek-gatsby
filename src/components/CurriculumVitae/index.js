@@ -1,5 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
+import FormattedBody from "../FormattedBody"
 import "../../sass/_curriculumvitar.sass"
 
 const CurriculumVitar = data => (
@@ -22,31 +23,9 @@ const CurriculumVitar = data => (
           ></div>
         </div>
       </div>
-      <div className="current-designation">
-        <span className="lable">Work@</span>
-        <p className="section-content">
-          Currently, I'm working as a <b>{data.cv.field_current_designation}</b>
-          .
-        </p>
-      </div>
-      <div className="academics">
-        <span className="lable">Studied@</span>
-        <span className="section-content">
-          <p>
-            I did my post-graduation on{" "}
-            <b>{data.cv.relationships.field_academics[0].field_name}</b> from{" "}
-            <b>
-              {data.cv.relationships.field_academics[0].field_college_school}
-            </b>
-            . And also have a degree in{" "}
-            <b>{data.cv.relationships.field_academics[1].field_name}</b> from{" "}
-            <b>
-              {data.cv.relationships.field_academics[1].field_college_school}
-            </b>
-            .
-          </p>
-        </span>
-      </div>
+      {data.cv.relationships.field_all_in_one.map((data, index) => {
+        return <FormattedBody key={index} block={data} />
+      })}
     </div>
   </div>
 )
