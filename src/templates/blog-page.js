@@ -3,13 +3,15 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
+import FormattedBody from "../components/FormattedBody"
 
 import "../sass/_blogpage.sass"
 
 export default ({ data }) => {
-  const image =
-    data.allNodeArticle.nodes[0].relationships.field_image.localFile
-      .childImageSharp.fluid
+  const image = data.allNodeArticle.nodes[0].relationships.field_image
+    ? data.allNodeArticle.nodes[0].relationships.field_image.localFile
+        .childImageSharp.fluid
+    : null
   const url = typeof window !== "undefined" ? window.location.href : ""
 
   return (
@@ -36,25 +38,20 @@ export default ({ data }) => {
             }
           )}
         </div>
+        <div className="blog-image">
+          {image ? <Img fluid={image}></Img> : ""}
+        </div>
         <div
           className="blog-body"
           dangerouslySetInnerHTML={{
             __html: data.allNodeArticle.nodes[0].body.processed,
           }}
         ></div>
-        <div className="blog-image">
-          {data.allNodeArticle.nodes[0].relationships.field_image.localFile
-            .childImageSharp ? (
-            <Img
-              fluid={
-                data.allNodeArticle.nodes[0].relationships.field_image.localFile
-                  .childImageSharp.fluid
-              }
-            ></Img>
-          ) : (
-            ""
-          )}
-        </div>
+        {data.allNodeArticle.nodes[0].relationships.field_all_in_one.map(
+          (data, index) => {
+            return <FormattedBody key={index} block={data} />
+          }
+        )}
       </div>
     </Layout>
   )
@@ -83,6 +80,28 @@ export const query = graphql`
           }
           field_tags {
             name
+          }
+          field_all_in_one {
+            field_title
+            field_body {
+              processed
+            }
+            field_media_position
+            relationships {
+              field_sub_media {
+                relationships {
+                  field_media_image {
+                    localFile {
+                      childImageSharp {
+                        fluid {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
         title
