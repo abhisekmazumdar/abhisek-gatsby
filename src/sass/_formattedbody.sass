@@ -1,0 +1,22 @@
+@import "variables"
+
+.block-wrapper
+    .block-media
+        @media (min-width: $big-screen)
+            width: 25%
+            padding-bottom: 1rem
+    .left
+        @media (min-width: $big-screen)
+            float: left
+            padding-right: 1rem
+    .right
+        @media (min-width: $big-screen)
+            float: right
+            padding-left: 1rem
+    .center
+        @media (min-width: $big-screen)
+            width: 50%
+            display: block
+            margin: 0 auto
+    .block-content
+        overflow-wrap: break-word
