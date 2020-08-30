@@ -8,26 +8,28 @@ const FormattedBody = data => (
     {data.block.field_title && (
       <span className="lable">{data.block.field_title}</span>
     )}
-    {data.block.relationships && (
-      <div
-        className={
-          "block-media " + data.block.field_media_position.toLowerCase()
-        }
-      >
-        <Img
-          fluid={
-            data.block.relationships.field_sub_media.relationships
-              .field_media_image.localFile.childImageSharp.fluid
+    {data.block.relationships &&
+      data.block.relationships.field_sub_media &&
+      data.block.field_media_position && (
+        <div
+          className={
+            "block-media " + data.block.field_media_position.toLowerCase()
           }
-        ></Img>
-      </div>
+        >
+          <Img
+            fluid={
+              data.block.relationships.field_sub_media.relationships
+                .field_media_image.localFile.childImageSharp.fluid
+            }
+          ></Img>
+        </div>
+      )}
+    {data.block.field_body && (
+      <span
+        dangerouslySetInnerHTML={{ __html: data.block.field_body.processed }}
+        className="block-content"
+      ></span>
     )}
-    <span
-      dangerouslySetInnerHTML={{ __html: data.block.field_body.processed }}
-      className="block-content"
-    ></span>
-
-    {console.log(data.block)}
   </div>
 )
 

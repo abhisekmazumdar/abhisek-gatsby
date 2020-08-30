@@ -78,17 +78,6 @@ export const query = graphql`
       filter: { status: { eq: true } }
     ) {
       nodes {
-        relationships {
-          field_image {
-            localFile {
-              childImageSharp {
-                fixed(width: 100, height: 100) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-          }
-        }
         created
         path {
           alias

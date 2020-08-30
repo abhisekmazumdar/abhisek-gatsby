@@ -9,8 +9,8 @@ import "../sass/_blogpage.sass"
 
 export default ({ data }) => {
   const image = data.allNodeArticle.nodes[0].relationships.field_image
-    ? data.allNodeArticle.nodes[0].relationships.field_image.localFile
-        .childImageSharp.fluid
+    ? data.allNodeArticle.nodes[0].relationships.field_image.relationships
+        .field_media_image.localFile.childImageSharp.fluid
     : null
   const url = typeof window !== "undefined" ? window.location.href : ""
 
@@ -69,15 +69,6 @@ export const query = graphql`
         }
         created
         relationships {
-          field_image {
-            localFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
           field_tags {
             name
           }
@@ -97,6 +88,19 @@ export const query = graphql`
                           ...GatsbyImageSharpFluid
                         }
                       }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          field_image {
+            relationships {
+              field_media_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
