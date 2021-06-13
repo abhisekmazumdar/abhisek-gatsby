@@ -1,8 +1,5 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/258c38ef-b18c-465e-821b-87bb041919ee/deploy-status)](https://app.netlify.com/sites/reverent-perlman-34a518/deploys)
+
 <h1 align="center">
   Abhisek Mazumdar
 </h1>
