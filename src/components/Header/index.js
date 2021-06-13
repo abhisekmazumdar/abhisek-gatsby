@@ -12,9 +12,13 @@ const Header = ({ siteTitle }) => (
       <nav className="menu">
         {/* Don't add more then 4 Links */}
         <Link to="/blogs/">Blogs</Link>
+        <a
+          href="https://www.notion.so/abhisekmazumdar/Abhisek-Mazumdar-5b18bbe2c93b472581e0996016e37b74"
+          target="_blank"
+        >
+          Resume
+        </a>
         <Link to="/photos/">Photos</Link>
-        <Link to="/twitter/">Tweets</Link>
-        <Link to="/contact-me/">Get in Touch</Link>
       </nav>
     </div>
   </header>
