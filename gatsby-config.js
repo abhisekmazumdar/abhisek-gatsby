@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://dev-abhisek.pantheonsite.io/`,
+        baseUrl: `https://dev-abhisek-xyz.pantheonsite.io`,
         apiBase: `jsonapi`,
         basicAuth: {
           username: process.env.BASIC_AUTH_USERNAME,
