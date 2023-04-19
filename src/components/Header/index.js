@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => (
         {/* Don't add more then 4 Links */}
         <Link to="/blogs/">Blogs</Link>
         <a
-          href="https://abhisekmazumdar.notion.site/Abhisek-Mazumdar-5b18bbe2c93b472581e0996016e37b74"
+          href="https://abhisekmazumdar.notion.site/Abhisek-Mazumdar-f624928ce0fa4b48900097a7c6703de9"
           target="_blank"
         >
           Resume
